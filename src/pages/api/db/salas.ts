@@ -1,6 +1,6 @@
-import { PrismaClient } from "@prisma/client";
 import { AES } from "crypto-js";
 import type { NextApiRequest, NextApiResponse } from "next";
+import prisma from "../../../lib/prisma/prisma";
 
 export default async function handle(
   req: NextApiRequest,
@@ -20,7 +20,6 @@ async function handlePOST(
   res: NextApiResponse,
 ){
   try {
-    const prisma = new PrismaClient();
     const salas = await prisma.salas.findMany()
     res.json({s:true,salas});
   }catch(e){

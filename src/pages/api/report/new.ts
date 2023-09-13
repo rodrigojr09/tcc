@@ -1,6 +1,5 @@
-import { PrismaClient } from "@prisma/client";
 import type { NextApiRequest, NextApiResponse } from "next";
-import client from "../../../lib/email";
+import prisma from "../../../lib/prisma/prisma";
 
 export default async function handle(
   req: NextApiRequest,
@@ -21,7 +20,6 @@ async function handlePOST(
 ){
     const body = req.body;
   try {
-    const prisma = new PrismaClient();
     const sala = await prisma.salas.findUnique({
         where: { id: body.sala }
     });

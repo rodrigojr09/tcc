@@ -1,6 +1,6 @@
-import { PrismaClient } from '@prisma/client';
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import prisma from '../../../lib/prisma/prisma';
 import { User } from '../../../utils/types';
 
 export default NextAuth({
@@ -12,7 +12,6 @@ export default NextAuth({
                 password: { type: 'password' },
             },
             authorize: async function(credentials,req){
-                const prisma = new PrismaClient();
                 const user = await prisma.users.findUnique({ where: { rm: credentials?.rm } }) as any;
                 if(!user) return null;
                 user.email = user.rm;
@@ -28,7 +27,6 @@ export default NextAuth({
             return baseUrl
         },
         async session({ session, user, token }:any) {
-            const prisma = new PrismaClient();
             const userDb = await prisma.users.findUnique({ where: { rm: session.user.email }})
             session.user = userDb;
             return session
