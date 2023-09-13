@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = "mongodb+srv://AyshaDB:J8LC1nEGY6bKpObm@ayshacluster.9u4bqds.mongodb.net/TCC"
+}
+
+model Users {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  // Identificação
+  rm          String    @unique
+  password    String
+  permission  Int       @default(0)
+  // Informação
+  nome        String
+  nascimento  String
+}
+
+model Salas {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  nome        String
+  reclames    Report[]
+  sugestoes   Report[]
+}
+
+type Report {
+  motivo      String
+  user        String
+}
