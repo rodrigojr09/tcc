@@ -2,13 +2,11 @@ import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import LinkButton from '../components/Link';
 import Navbar from '../components/Navbar'
-import mail from '../lib/email';
 import { User } from '../utils/types';
 
 export default function Index() {
   const {data,status} = useSession();
   const user = data?.user as User | undefined; 
-  mail
   return (
     <div className='flex flex-col'>
       <div className='mb-10 w-screen h-[450px] eletro-image border-b border-red-600'>
