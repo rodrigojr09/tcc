@@ -17,26 +17,16 @@ export default function Navbar(){
         return style ? style : undefined;
     }
     return (
-      <nav className="bg-[#ff0000]">
-  <div className="logo">Inicio</div>
-  <div className="links">
-    <ul className="nav-itens">
-    <li className="text-white">
-        <a href="">Link1</a>
-      </li>
-      <li className="text-white">
-        <a href="">Link2</a>
-      </li>
-      <li className="text-white">
-        <a href="">Link3</a>
-      </li>
-    </ul>
-  </div>
-  <div className="btn">
-    <a href={ !data?.user ? "/auth/login" : "#" } className="usuario">
-      { !data?.user ? "Login" : user?.nome }
-    </a>
-  </div>
-</nav>
+    <nav>
+      <img className="logo w-10 h-10" src="icon.png" alt="logo"/>
+      <nav>
+          <ul className="nav__links">
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Project</a></li>
+              <li><a href="#">About</a></li>
+          </ul>
+      </nav>
+      <a className="cta" href="#"><button> Contact</button></a>
+  </nav>
     );
 }
