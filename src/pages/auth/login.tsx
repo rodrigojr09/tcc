@@ -13,12 +13,6 @@ export default function Login() {
   const { status } = useSession();
   const router = useRouter();
   if(status === "authenticated") router.push("/")
-  function Submit(e:any){
-    setError(undefined);
-    if(rm.length < 5) return setError("RM incorreto ou invalido!");
-    if(password.length < 8) return setError("Senha incorreta ou invalida!");
-    signIn("credentials", { rm,password,callbackUrl: "/",redirect: true })
-  }
   return (
     <>
       <div className="main-login">
@@ -29,7 +23,7 @@ export default function Login() {
         </h1>
         <Image width={0} height={0} alt="Eletro" src={EletroImg} className="left-login-image" />
       </div>
-      <div className="right-login">
+      <form action={"/api/login"}  method="POST" className="right-login">
         <div className="card-login">
           <h1>LOGIN</h1>
           <div className="textfield">
@@ -40,9 +34,9 @@ export default function Login() {
             <label htmlFor="Senha">Senha:</label>
             <input type="password" value={password} onChange={e=>setPassword(e.target.value)} minLength={8} name="Senha" placeholder="Senha" />
           </div>
-          <button className="btn-login" onClick={e=>Submit(e)}>Login</button>
+          <button className="btn-login" type="submit">Login</button>
         </div>
-      </div>
+      </form>
     </div>
 
     </>

@@ -2294,11 +2294,6 @@ yaml@^2.1.1:
   resolved "https://registry.npmjs.org/yaml/-/yaml-2.3.2.tgz"
   integrity sha512-N/lyzTPaJasoDmfV7YTrYCI0G/3ivm/9wdG0aHuheKowWQwGTsK0Eoiw6utmzAnI6pkJa0DUVygvp3spqqEKXg==
 
-yarn@^1.22.19:
-  version "1.22.19"
-  resolved "https://registry.npmjs.org/yarn/-/yarn-1.22.19.tgz"
-  integrity sha512-/0V5q0WbslqnwP91tirOvldvYISzaqhClxzyUKXYxs07yUILIs5jx/k6CFe8bvKSkds5w+eiOqta39Wk3WxdcQ==
-
 zod@3.21.4:
   version "3.21.4"
   resolved "https://registry.npmjs.org/zod/-/zod-3.21.4.tgz"

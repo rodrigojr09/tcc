@@ -17,8 +17,7 @@ export default function Navbar(){
         return style ? style : undefined;
     }
     return (
-    <nav>
-      <img className="logo w-10 h-10" src="icon.png" alt="logo"/>
+    <header>
       <nav>
           <ul className="nav__links">
               <li><a href="#">Services</a></li>
@@ -27,6 +26,6 @@ export default function Navbar(){
           </ul>
       </nav>
       <a className="cta" href="#"><button> Contact</button></a>
-  </nav>
+  </header>
     );
 }

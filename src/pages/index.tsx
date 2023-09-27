@@ -21,7 +21,7 @@ export default function Index() {
         </div>
       </div>
       <div className='mx-10 mb-4 mt-4 text-2xl text-black dark:text-white flex flex-col space-y-4'>
-        <p>{user ? ", aqui está sua pagina do aluno Eletro para reporte de problemas." : "Bem vindo ao Suporte ETEC, aqui você poderá tirar duvidas e fazer uma sugestão ou reclamação para a escola."}</p>
+        <p>{user ? user.nome+", aqui está sua pagina do aluno Eletro para reporte de problemas." : "Bem vindo ao Suporte ETEC, aqui você poderá tirar duvidas e fazer uma sugestão ou reclamação para a escola."}</p>
         <div>
           <LinkButton href={user ? "/reporte/new" : "/auth/login"}>
             {user ? <span>Novo Reporte</span>: <span>Entrar</span>}
