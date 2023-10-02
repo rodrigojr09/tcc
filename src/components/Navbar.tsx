@@ -17,15 +17,18 @@ export default function Navbar(){
         return style ? style : undefined;
     }
     return (
-    <header>
-      <nav>
-          <ul className="nav__links">
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Project</a></li>
-              <li><a href="#">About</a></li>
-          </ul>
-      </nav>
-      <a className="cta" href="#"><button> Contact</button></a>
-  </header>
+        <header className="header">
+            <a href="#" className="Logo">Suporte Eletro</a>
+            <input type="checkbox" id="check"/>
+            <label htmlFor="check" className="icons">
+                <i className='bx bx-menu'id="menu-icon"></i>
+                <i className='bx bx-x'id="close-icon"></i>
+            </label>
+            <nav className="navbar">
+            <a  href="#" style={"--i:0;"}>Home</a>
+            <a  href="#" style="--i:1;">Sobre</a> 
+            <a  href="#" style="--i:2;">Login</a>    
+            </nav>
+        </header>
     );
 }
