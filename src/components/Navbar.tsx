@@ -17,7 +17,7 @@ export default function Navbar(){
         return style ? style : undefined;
     }
     return (
-        <header className="header">
+        <header className="navbar-header">
             <a href="#" className="Logo">Suporte Eletro</a>
             <input type="checkbox" id="check"/>
             <label htmlFor="check" className="icons">
@@ -25,9 +25,9 @@ export default function Navbar(){
                 <i className='bx bx-x'id="close-icon"></i>
             </label>
             <nav className="navbar">
-            <a  href="#" style={"--i:0;"}>Home</a>
-            <a  href="#" style="--i:1;">Sobre</a> 
-            <a  href="#" style="--i:2;">Login</a>    
+            <a  href="#">Home</a>
+            <a  href="#">Sobre</a> 
+            <a  href="#">Login</a>    
             </nav>
         </header>
     );

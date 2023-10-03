@@ -7,10 +7,9 @@ export default function Document() {
       <Head>
         <link rel="icon" href="/icon.ico" />
       </Head>
-      <body className='text-white overflow-x-hidden bg-white dark:bg-black w-screen max-w-screen-1xl h-screen'>
+      <body>
         <Main />
         <NextScript />
-        <p className={"hidden "+preload}>preload</p>
       </body>
     </Html>
   )
