@@ -50,23 +50,21 @@ export default function ReporteNew() {
         <div className="card-report">
           <h1>Reporte</h1>
           <div className="textfield">
-            <label htmlFor="tipo">Escolha a sala que requer manutenção:</label>
-            <select id="tipo" name="tipo">
-                <option value="sala1">Sala 1</option>
-                <option value="sala2">Sala 2</option>
-                <option value="sala3">Sala 3</option>
+            <label htmlFor="sala">Escolha a sala que requer manutenção:</label>
+            <select id="sala" name="sala">
+                { salas.map((a:any,i:number) => <option onSelect={e=>setSelected(a.id)}>{a.nome}</option>) }
             </select>
             <br/>
             <label htmlFor="tipo">Nos diga o seu problema ou sugestão:</label>
             <select id="tipo" name="tipo">
-                <option value="problema">Problema</option>
-                <option value="sugestao">Sugestão</option>
+                <option onSelect={e=>setMotivo("1")}>Problema</option>
+                <option onSelect={e=>setSelected("2")}>Sugestão</option>
             </select>
             <br/>
             <label htmlFor="entrada">Insira o Motivo de reporte:</label>
-            <textarea className="no-resize" style={{height:"100px",width:"100%"}}></textarea> 
+            <textarea value={motivo} onChange={e=>setMotivo(e.target.value)} className="no-resize" style={{height:"100px",width:"100%"}}></textarea> 
         </div>
-        <button className="btn-enviar">enviar</button>
+        <button onClick={e=>enviar()} className="btn-enviar">enviar</button>
       </div>
     </div>
 }

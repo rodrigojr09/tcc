@@ -12,7 +12,7 @@ export default function Index() {
   return (
     <div className="main-home">
       <div className="left-home">
-        <Image src={HomeImage} width={5} height={100} className="left-home-image"  alt="home_image.svg" />
+        <Image src={HomeImage} width={0} height={0} className="left-home-image"  alt="home_image.svg" />
       </div>
       <div className="right-home">
         <h1>

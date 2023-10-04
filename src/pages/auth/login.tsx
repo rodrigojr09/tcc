@@ -25,7 +25,7 @@ export default function Login() {
           <h1>
             Faça login no suporte <a href="https://www.eletromococa.com.br">ETEC</a>
           </h1>
-          <Image src={LoginImage} width="1182" alt="login_image.png" height={473} className="left-login-image" />
+          <Image src={LoginImage} width="0" alt="login_image.png" height={0} className="left-login-image" />
         </div>
         <div className="right-login">
           <div className="card-login">

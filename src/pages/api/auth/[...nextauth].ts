@@ -29,10 +29,10 @@ export default NextAuth({
         async session({ session, user, token }:any) {
             const userDb = await prisma.users.findUnique({ where: { rm: session.user.email }})
             session.user = userDb;
-            return session
+            return session;
         },
         async jwt({ token, user, account, profile, isNewUser }) {
-            return token
+            return token;
         }
     }
 })
