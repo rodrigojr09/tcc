@@ -46,40 +46,27 @@ export default function ReporteNew() {
       }),
     });
   }
-  if (status === "authenticated")
-    return (
-      <div className="h-screen">
-        <div className="w-full h-full flex items-center justify-center">
-            <div className="card-report">
-              <h1>Reporte</h1>
-              <div className="textfield">
-                <label htmlFor="sala">
-                  Escolha a sala que requer manutenção:
-                </label>
-                <select id="sala" className="text-black" name="sala">
-                  {salas.map((sala:any) => <option onSelect={e=>setSelected(sala.id)}>{sala.nome}</option>)}
-                </select>
-                <br />
-                <label htmlFor="tipo">
-                  Nos diga o seu problema ou sugestão:
-                </label>
-                <select id="tipo" className="text-black" name="tipo">
-                  <option onSelect={e=>setType("1")}>Problema</option>
-                  <option onSelect={e=>setType("2")}>Sugestão</option>
-                </select>
-                <br />
-                <label htmlFor="entrada">Insira o Motivo de reporte:</label>
-                <textarea
-                  onChange={e=>setMotivo(e.target.value)}
-                  value={motivo}
-                  className="no-resize"
-                  style={{ height: 100, width: "100%" }}
-                  defaultValue={""}
-                />
-              </div>
-              <button className="btn-enviar" onClick={e=>enviar()}>enviar</button>
-            </div>
-          </div>
+  if (status === "authenticated") return <div className="center-report">
+        <div className="card-report">
+          <h1>Reporte</h1>
+          <div className="textfield">
+            <label htmlFor="tipo">Escolha a sala que requer manutenção:</label>
+            <select id="tipo" name="tipo">
+                <option value="sala1">Sala 1</option>
+                <option value="sala2">Sala 2</option>
+                <option value="sala3">Sala 3</option>
+            </select>
+            <br/>
+            <label htmlFor="tipo">Nos diga o seu problema ou sugestão:</label>
+            <select id="tipo" name="tipo">
+                <option value="problema">Problema</option>
+                <option value="sugestao">Sugestão</option>
+            </select>
+            <br/>
+            <label htmlFor="entrada">Insira o Motivo de reporte:</label>
+            <textarea className="no-resize" style={{height:"100px",width:"100%"}}></textarea> 
+        </div>
+        <button className="btn-enviar">enviar</button>
       </div>
-    );
+    </div>
 }

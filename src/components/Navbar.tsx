@@ -18,16 +18,16 @@ export default function Navbar(){
     }
     return (
         <header className="navbar-header">
-            <a href="#" className="Logo">Suporte Eletro</a>
+            <a href="/" className="Logo">Suporte Eletro</a>
             <input type="checkbox" id="check"/>
             <label htmlFor="check" className="icons">
                 <i className='bx bx-menu'id="menu-icon"></i>
                 <i className='bx bx-x'id="close-icon"></i>
             </label>
             <nav className="navbar">
-            <a  href="#">Home</a>
-            <a  href="#">Sobre</a> 
-            <a  href="#">Login</a>    
+            <a  href="/">Home</a>
+            <a  href="/about">Sobre</a> 
+            <a  href={user ? "/aluno" : "/auth/login"}>{user ? user.nome : "Login"}</a>    
             </nav>
         </header>
     );

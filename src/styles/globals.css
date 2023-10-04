@@ -12,11 +12,17 @@
 
 body{
     min-height: 100vh;
+    height: screen;
     background:#202020;
     background-size: cover;
     background-repeat: center;
     overflow: hidden;
 }
+
+.error {
+    color: rgb(255, 0, 0);
+}
+
 .navbar-header{
     position: fixed;
     top: 0;
@@ -269,6 +275,136 @@ body{
     text-align: center;
 
 }
+
+
+.center-report {
+    height: 100vh;
+    width: 100%;
+    font-family: 'Noto Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    background-color: #202020;
+    margin-top: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.center-report .card-report {
+    height: 500px;
+    width: 550px;
+    display: flex;
+    margin-top: 70px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px 30px 35px;
+    background: #30303066;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+  }
+  
+  .center-report .no-resize {
+    resize: none;
+  }
+  
+  .center-report .card-report > h1 {
+    color: #fff;
+    font-weight: 800;
+    font-size: large;
+    margin: 0;
+    margin-top: 20px;
+  }
+  
+  .center-report select {
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #717171;
+    color: #fff;
+    font-size: 13pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  .center-report .textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+  }
+  
+  .center-report .textfield > textarea {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #717171;
+    color: #fff;
+    font-size: 13pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  .center-report .textfield > label {
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .center-report .textfield > input ::placeholder {
+    color: #ffffff94;
+  }
+  
+  .center-report .btn-enviar {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #ffffff;
+    background: #d80000;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #db00004e;
+  }
+  
+  .center-report .textarea {
+    width: 50px;
+    height: 50px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .center-report .main-home {
+      flex-direction: column;
+    }
+    .center-report .left-home {
+      display: none;
+    }
+  
+    .center-report .left-home {
+      width: 100%;
+      height: auto;
+    }
+  
+    .center-report .right-home {
+      width: 100%;
+      height: auto;
+    }
+    .center-report .left-home-image {
+      width: 50vw;
+    }
+  }
+  
 
 @media only screen and (max-width: 950px){
     .main-login .card-login{

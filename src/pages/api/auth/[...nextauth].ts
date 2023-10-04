@@ -24,7 +24,7 @@ export default NextAuth({
             return true
         },
         async redirect({ url, baseUrl }) {
-            return baseUrl
+            return url;
         },
         async session({ session, user, token }:any) {
             const userDb = await prisma.users.findUnique({ where: { rm: session.user.email }})

@@ -13,6 +13,11 @@ export default function Login() {
   const { status } = useSession();
   const router = useRouter();
   if(status === "authenticated") router.push("/")
+  function auth(){
+    if(rm.length !== 5) setError("Seu RM está invalido");
+    if(password.length < 8) setError("Senha incorreta ou invalida");
+    signIn("credentials", { rm,password,callbackUrl: "/aluno",redirect: true });
+  }
   return (
     <>
       <div className="main-login">
@@ -25,15 +30,22 @@ export default function Login() {
         <div className="right-login">
           <div className="card-login">
             <h1>LOGIN</h1>
+            {error && <p className="error">{error}</p>}
             <div className="textfield">
               <label htmlFor="Usuario">Registro de Matricula (RM):</label>
-              <input type="text" maxLength={5} value={rm} onChange={e=>setRM(e.target.value)} name="Usuario" placeholder="Seu RM" />
+              <input type="text" minLength={5} maxLength={5} value={rm} onChange={e=>{
+                setRM(e.target.value);
+                setError(undefined);
+              }} name="Usuario" placeholder="Seu RM" />
             </div>
             <div className="textfield">
               <label htmlFor="Senha">Senha:</label>
-              <input type="password" value={password} onChange={e=>setPassword(e.target.value)} name="Senha" placeholder="Senha" />
+              <input type="password" value={password} onChange={e=>{
+                setPassword(e.target.value)
+                setError(undefined);
+              }} name="Senha" placeholder="Senha" />
             </div>
-            <button className="btn-login">Login</button>
+            <button onClick={e=>auth()} className="btn-login">Login</button>
           </div>
         </div>
       </div>

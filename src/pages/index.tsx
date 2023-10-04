@@ -21,7 +21,7 @@ export default function Index() {
           aqui você poderá tirar duvidas e fazer uma sugestão ou reclamação para a
           escola.
         </h1>
-        <a href={user ? "/profile" : "/auth/login"} className="btn-entrar">Entrar</a>
+        <a href={user ? "/aluno" : "/auth/login"} className="btn-entrar">Entrar</a>
       </div>
     </div>
   )
