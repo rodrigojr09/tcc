@@ -5,7 +5,6 @@ export default function Document() {
   return (
     <Html lang="pt-br">
       <Head>
-        <title>Suporte Eletro</title>
         <link rel="icon" href="/icon.ico" />
       </Head>
       <body>
