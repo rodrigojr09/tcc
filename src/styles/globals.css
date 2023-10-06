@@ -400,23 +400,6 @@ body{
     height: 50px;
   }
   
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
-
-*{
-    font-family: 'Noto sans',  sans-serif;
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #202020;
-    background-size: cover;
-    background-repeat: center;
-}
 .admin .main-home{
     width: 100vw;
     height: 100vh;
@@ -532,7 +515,7 @@ height: 500px;
     color: #fff;
 
 }
-.admin #entrar_button{
+.admin .entrar_button{
     border:none;
     padding: 10px;
     border-radius:2px;
@@ -544,7 +527,7 @@ height: 500px;
     font-size: 16px;
     transition: all 0.2s ease-in-out;
 }
-.admin #entrar_button:hover{
+.admin .entrar_button:hover{
     background-color: transparent;
     color: #d80000;
     transition: all 0.2s ease-in-out;
@@ -555,6 +538,199 @@ height: 500px;
 .admin .card.active .content::before{
     visibility:hidden;
 }
+
+.aluno {
+    display: flex;
+}
+
+.menu-lateral{
+    position: relative;
+    width: 350px;
+    height: 100%;
+    min-height: 100vh;
+    padding: 40px 0 40px 1%;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    box-shadow: 3px 0 0 #DB0000;
+    display: flex;
+}
+
+.menu-lateral ul{
+    list-style-type: none;
+    margin-top: 100px;
+}
+
+.menu-lateral ul li.item-menu a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 10px;
+    line-height: 10px;
+}
+
+.menu-lateral #button_lateral{
+    border:none;
+    padding: 10px;
+    border-radius:8px;
+    margin-top: 21vh;
+    background-color: #d80000;
+    color: #fff;
+    font-weight:bold;
+    cursor:pointer;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+    position: absolute;
+    bottom: 60px;
+}
+.menu-lateral #button_lateral2{
+    position: absolute;
+    bottom: 10px;
+    border:none;
+    padding: 10px;
+    border-radius:8px;
+    margin-top: 10px;
+    background-color: #d80000;
+    color: #fff;
+    font-weight:bold;
+    cursor:pointer;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+}
+
+
+.menu-lateral #button_lateral:hover,.menu-lateral #button_lateral2:hover{
+    transform: scale(1.1);    
+}
+
+.cards {
+    width: 100vw;
+    height: 100vh;
+    background: #202020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards .left-home{
+    width: 400px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.cards .right-home{
+    width: 400px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cards .icon{
+    margin-bottom: 20px;
+}
+
+.cards .card-class{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    background-color: #30303066;
+    text-align: justify;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.389);
+    padding: 30px 35px;
+    border-radius: 20px;
+    height: 500px;
+}
+    
+.cards .icon-class{
+    margin-bottom: 20px;
+}
+.cards .icon img{
+    width: 250px;
+}
+.cards .icon-class img{
+    width: 250px;
+}
+.cards .content{
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+.cards .content::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear linear-gradient(transparent, #3f3f3f);
+}
+.cards .content h3{
+    text-align:center;
+    margin-bottom: 15px;
+    font-size: 20px;
+    position: relative;
+    color: #fff;
+}
+.cards .content h3::before{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 90px;
+    background-color:#d80000;
+    bottom:2px;
+    border-radius: 100px;
+}
+.cards .content h4{
+    text-align:center;
+    margin-bottom: 15px;
+    font-size: 20px;
+    position: relative;
+    color: #fff;
+}
+.cards .content h4::before{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 80px;
+    background-color:#d80000;
+    bottom:2px;
+    border-radius: 100px;
+}
+
+.cards .content p{
+    color: #fff;
+
+}
+.cards .entrar_button{
+    border:none;
+    padding: 10px;
+    border-radius:8px;
+    margin-top: 15px;
+    background-color: #d80000;
+    color: #fff;
+    font-weight:bold;
+    cursor:pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+.cards .entrar_button:hover{
+    background-color: transparent;
+    color: #d80000;
+    transition: all 0.2s ease-in-out;
+}
+.cards .card-active .content{
+    height:auto;
+}
+.cards .card.active .content::before{
+    visibility:hidden;
+}
+
 
   @media only screen and (max-width: 600px) {
     .center-report .main-home {
