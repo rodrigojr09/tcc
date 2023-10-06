@@ -20,6 +20,7 @@ async function handlePOST(
 ){
     const body = req.body;
   try {
+    console.log(body)
     const sala = await prisma.salas.findUnique({
         where: { id: body.sala }
     });

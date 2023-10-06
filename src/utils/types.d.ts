@@ -11,3 +11,15 @@ export interface User {
     nascimento: string
 }
 
+interface Sala {
+    id: string;
+    nome: string;
+    reclames: {
+        motivo: string;
+        user: string;
+    }[];
+    sugestoes: {
+        motivo: string;
+        user: string;
+    }[];
+}
