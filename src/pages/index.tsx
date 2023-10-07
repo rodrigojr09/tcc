@@ -17,7 +17,7 @@ export default function Index() {
       <div className="right-home">
         <h1>
           {" "}
-          Bem vindo ao suporte <a href="https://www.eletromococa.com.br">ETEC</a>,
+          Bem vindo ao suporte <a href="https://www.eletromococa.com.br">Eletro</a>,
           aqui você poderá tirar duvidas e fazer uma sugestão ou reclamação para a
           escola.
         </h1>
