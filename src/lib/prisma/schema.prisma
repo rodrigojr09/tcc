@@ -14,11 +14,11 @@ model Users {
   id          String    @id @default(auto()) @map("_id") @db.ObjectId
   // Identificação
   rm          String    @unique
-  password    String
+  nome        String
+  password    String    
   permission  Int       @default(0)
   // Informação
-  nome        String
-  nascimento  String
+  
 }
 
 model Salas {

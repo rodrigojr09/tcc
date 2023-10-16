@@ -48,7 +48,7 @@ export default function PageAluno(){
                         <h3>Reportar</h3>
                         <p>Aqui você consegue fazer o reporte de uma manutenção ou sugestão de melhoria</p>
                     </div>
-                    <a href="/reporte/new" className="entrar_button">Entrar</a>
+                    <a href="/reporte" className="entrar_button">Entrar</a>
                 </div>
             </div> 
 
