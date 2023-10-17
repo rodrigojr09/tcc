@@ -12,9 +12,7 @@ export default NextAuth({
                 password: { type: 'password' },
             },
             authorize: async function(credentials,req){
-                const user = await prisma.users.findUnique({ where: { rm: credentials?.rm as string } });
-                console.log(credentials?.password === user?.cpf.split(".").join("").replace("-", ""))
-                console.log(user.cpf.split(".").join("").replace("-", ""))
+                const user = await prisma.users.findUnique({ where: { rm: credentials?.rm as string } }) as any;
                 const result:User = {name:"",email:user?.email||"",id:user?.id||"12345"};
                 if(!user) return null;
                 if(user.password){
