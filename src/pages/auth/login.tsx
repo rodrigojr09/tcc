@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Navbar from "../../components/Navbar";
 import { signIn, useSession } from "next-auth/react";
@@ -6,12 +6,17 @@ import LoginImage from '../../styles/assets/eletro.png'
 import Image from "next/image";
 
 export default function Login() {
-  const [showPassword, setShowPassword] = useState(false);
   const [rm,setRM] = useState<string>("");
   const [password,setPassword] = useState<string>("");
-  const [error,setError] = useState<string|undefined>();
-  const { status } = useSession();
   const router = useRouter();
+  const [error,setError] = useState<string|undefined>();
+  useEffect(() => {
+    const query = router.query;
+    const erro = query.error;
+    if(!erro) return;
+    if(erro === "CredentialsSignin") setError("RM ou Senha Invalidos");
+  }, [])
+  const { status } = useSession();
   if(status === "authenticated") router.push("/")
   function auth(){
     if(rm.length !== 5) setError("Seu RM está invalido");

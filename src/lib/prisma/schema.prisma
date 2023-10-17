@@ -15,8 +15,14 @@ model Users {
   // Identificação
   rm          String    @unique
   nome        String
-  password    String    
-  permission  Int       @default(0)
+  curso       String
+  grupo       String
+  serie       String
+  cpf         String
+  password    String?  
+  email       String?
+  emailEscolar String?  
+  permission  Int       @default(1)
   // Informação
   
 }
