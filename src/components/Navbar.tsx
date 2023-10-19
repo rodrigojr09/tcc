@@ -25,7 +25,7 @@ export default function Navbar(){
             <nav className="navbar">
             <a  href="/">Home</a>
             <a  href="/about">Sobre</a> 
-            <a  href={user ? "/aluno" : "/auth/login"}>{user ? user.nome : "Login"}</a>    
+            <a  href={user ? "/aluno" : "/auth/login"}>{user ? (user?.nome.split(" ")[0].split("").map((a,i)=>i === 0 ? a : a.toLowerCase())) : "Login"}</a>    
             </nav>
         </header>
     );

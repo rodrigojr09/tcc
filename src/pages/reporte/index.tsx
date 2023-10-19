@@ -45,6 +45,8 @@ export default function ReporteNew() {
         type,
         user: (data?.user as any).rm,
       }),
+    }).then(async () => {
+      router.push("/reporte/success")
     });
   }
   if (status === "authenticated") return <div className="center-report">

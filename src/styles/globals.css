@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;*/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/tilt?family=Noto+Sans:wght@400;700&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -44,7 +44,7 @@ body{
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     padding: 1.3rem 10%;
    /* background:rgba(0, 0, 0, .1);*/
     /*backdrop-filter:blur(50px) ;*/
@@ -58,7 +58,7 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     background: rgba(0, 0, 0, .1);
     backdrop-filter: blur(50px);
@@ -77,7 +77,7 @@ body{
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 2.5rem;
+    margin-left: 2.7rem;
 }
 
 .navbar-header .navbar a::before{
@@ -175,12 +175,6 @@ body{
 
 .main-home .btn-entrar:hover{
     transform: scale(1.1);
-}
-
-
-.main-home a{
-    color: #DB0000;
-    text-decoration: none;
 }
 
 .main-login {
@@ -288,7 +282,7 @@ body{
 }
 
 .main-login a{
-    color: #DB0000;
+    color: red;
     text-decoration: none;
 }
 
@@ -517,7 +511,7 @@ height: 500px;
 
 .admin .content p{
     color: #fff;
-
+    
 }
 .admin .entrar_button{
     border:none;
@@ -545,36 +539,9 @@ height: 500px;
 
 .aluno {
     display: flex;
+    flex-direction: row;
 }
-
-.menu-lateral{
-    position: relative;
-    width: 350px;
-    height: 100%;
-    min-height: 100vh;
-    padding: 40px 0 40px 1%;
-    background: rgba(0, 0, 0, .1);
-    backdrop-filter: blur(50px);
-    box-shadow: 3px 0 0 #DB0000;
-    display: flex;
-}
-
-.menu-lateral ul{
-    list-style-type: none;
-    margin-top: 100px;
-}
-
-.menu-lateral ul li.item-menu a{
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-    padding: 20px 4%;
-    display: flex;
-    margin-bottom: 10px;
-    line-height: 10px;
-}
-
-.menu-lateral #button_lateral{
+.aluno .menu-lateral #button_lateral{
     border:none;
     padding: 10px;
     border-radius:8px;
@@ -588,7 +555,7 @@ height: 500px;
     position: absolute;
     bottom: 60px;
 }
-.menu-lateral #button_lateral2{
+.aluno .menu-lateral #button_lateral2{
     position: absolute;
     bottom: 10px;
     border:none;
@@ -602,22 +569,62 @@ height: 500px;
     font-size: 16px;
     transition: all 0.2s ease-in-out;
 }
+.aluno {
+    font-family: '';
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #202020;
+    background-size: cover;
+    background-repeat: center;
+}
+/* menu lateral ----------------------------------------------------------------------------------*/
 
+.aluno nav.menu-lateral{
+    width: 350px;
+    height: 100%;
+    padding: 40px 0 40px 1%;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    box-shadow: 3px 0 0 #DB0000;
+    display: flex;
+}
 
-.menu-lateral #button_lateral:hover,.menu-lateral #button_lateral2:hover{
+.aluno nav ul{
+    list-style-type: none;
+    margin-top: 100px;
+}
+
+.aluno nav ul li.item-menu a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 1px;
+    line-height: 25px;
+}
+
+.aluno nav #button_lateral:hover,#button_lateral2:hover{
     transform: scale(1.1);    
 }
 
-.cards {
+
+/* cards ----------------------------------------------------------------------------------*/
+
+.aluno .cards{
     width: 100vw;
     height: 100vh;
+    padding-top: 50px;
     background: #202020;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.cards .left-home{
+.aluno .cards .left-home{
     width: 400px;
     height: 100vh;
     display: flex;
@@ -625,7 +632,7 @@ height: 500px;
     align-items: center;
     flex-direction: column;
 }
-.cards .right-home{
+.aluno .cards .right-home{
     width: 400px;
     height: 100vh;
     display: flex;
@@ -634,11 +641,11 @@ height: 500px;
     flex-direction: column;
 }
 
-.cards .icon{
+.aluno .cards .icon{
     margin-bottom: 20px;
 }
 
-.cards .card-class{
+.aluno .cards .card-class{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -651,21 +658,21 @@ height: 500px;
     height: 500px;
 }
     
-.cards .icon-class{
-    margin-bottom: 20px;
-}
-.cards .icon img{
+.aluno .cards .icon-class{
+        margin-bottom: 20px;
+    }
+    .aluno .cards .icon img{
     width: 250px;
 }
-.cards .icon-class img{
+.aluno .cards.icon-class img{
     width: 250px;
 }
-.cards .content{
+.aluno .cards.content{
     height: 150px;
     overflow: hidden;
     position: relative;
 }
-.cards .content::before{
+.aluno .cards.content::before{
     content: '';
     position: absolute;
     bottom: 0;
@@ -673,46 +680,31 @@ height: 500px;
     height: 100px;
     background: linear linear-gradient(transparent, #3f3f3f);
 }
-.cards .content h3{
+.aluno .cards .content h3{
     text-align:center;
     margin-bottom: 15px;
-    font-size: 20px;
+    font-size: 23px;
     position: relative;
     color: #fff;
 }
-.cards .content h3::before{
-    content: '';
-    position: absolute;
-    height: 2px;
-    width: 90px;
-    background-color:#d80000;
-    bottom:2px;
-    border-radius: 100px;
-}
-.cards .content h4{
+
+.aluno .cards .content h4{
     text-align:center;
     margin-bottom: 15px;
-    font-size: 20px;
+    font-size: 23px;
     position: relative;
     color: #fff;
 }
-.cards .content h4::before{
-    content: '';
-    position: absolute;
-    height: 2px;
-    width: 80px;
-    background-color:#d80000;
-    bottom:2px;
-    border-radius: 100px;
-}
 
-.cards .content p{
+.aluno .cards .content p{
     color: #fff;
 
 }
-.cards .entrar_button{
+.aluno .cards .entrar_button{
     border:none;
     padding: 10px;
+    text-decoration: none;
+    text-align: center;
     border-radius:8px;
     margin-top: 15px;
     background-color: #d80000;
@@ -720,22 +712,36 @@ height: 500px;
     font-weight:bold;
     cursor:pointer;
     font-size: 16px;
-    text-align: center;
-    transition: all 0.2s ease-in-out;
+    outline: none;
+    text-transform: uppercase;
+    box-shadow: 0px 10px 40px -12px #db00004e;
+    transition: transform 200ms ease-in-out;
 }
-.cards .entrar_button:hover{
-    background-color: transparent;
-    color: #d80000;
-    transition: all 0.2s ease-in-out;
+.aluno .cards .entrar_button:hover{
+    transform: scale(1.1);
 }
-.cards .card-active .content{
+.aluno .cards .card-active .content{
     height:auto;
 }
-.cards .card.active .content::before{
+.aluno .cards .card.active .content::before{
     visibility:hidden;
 }
 
-.box-question .box-question{
+.box-question {
+    height: 90vh;
+    background-size: cover;
+    background-repeat: center;
+    background-color: #202020;
+    color: #fff;
+    font-family: 'Noto Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 85px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box-question .card {
     background-color: #30303066;
     margin-top: 2rem;
     color: #fff;
@@ -802,7 +808,238 @@ height: 500px;
     transform: scale(1.1);
 }
 
+
+.center-senha {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-items: center;
+    align-items: center;
+}
+
+.btn-voltar{
+    height: 50px;
+    width: 220px;
+    padding: 16px 0px;
+    margin:25px;
+    margin-right: 50px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color:#fff;
+    background: #DB0000;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #db00004e;
+    transition: transform 200ms ease-in-out;
+}
+
+a{
+    text-decoration: none;
+}
+
+.main-home h1 a {
+    color: red;
+}
+
+.btn-voltar:hover{
+    transform: scale(1.1);
+}
+
+.success .main-home{
+    width: 100vw;
+    height: 100vh;
+    background: #202020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.success .left-home{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.left-home-image2{
+    height: 400px;
+    width: 400px;
+}
+
+
+.center-senha .card-senha{
+    margin: auto;
+    height: 350px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction:column;
+    padding: 30px 35px;
+    background: #30303066;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+.center-senha .no-resize{
+    resize:none;
+}
+
+.center-senha .card-senha > h1 {
+    color:#fff;
+    font-weight: 800;
+    margin:0;
+}
+
+.center-senha input{
+    width: 100%;
+    height: 50px;
+    border:none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #717171;
+    color: #fff;
+    font-size: 13pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline:none;
+    box-sizing: border-box;
+}
+
+.center-senha .textfield{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin:10px 0px;
+}
+
+.center-senha .textfield > textarea {
+    width: 100%;
+    border:none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #717171;
+    color: #fff;
+    font-size: 13pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline:none;
+    box-sizing: border-box;
+}
+
+
+.center-senha .textfield > label {
+    color:#fff;
+    margin-bottom: 10px;
+}
+
+.center-senha .textfield > input ::placeholder{
+    color:#ffffff94;
+}
+
+.center-senha .btn{
+    width: 100%;
+    padding: 16px 0px;
+    margin:25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color:#ffffff;
+    background: #d80000;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #db00004e;
+    transition: transform 200ms ease-in-out;
+}
+.center-senha .btn:hover{
+    transform: scale(1.05);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #171717;
+}
+::-webkit-scrollbar-track {
+    padding: 2px 0;
+    background-color: #1d1d1dc6;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+
 @media only screen and (max-width: 800px){
+    body {
+        overflow-y: scroll;
+    }
+    .aluno .cards {
+        display: flex;
+        flex-direction: row;
+        padding-top: 1px;
+        overflow-y: visible;
+    }
+    .aluno .card-class {
+        width: 100vw;
+    }
+    .aluno .menu-lateral p {
+        display: flex;
+        flex-direction: column;
+    }
+    .aluno .menu-lateral #button_lateral{
+        border:none;
+        padding: 10px;
+        border-radius:8px;
+        margin-top: 0vh;
+        background-color: #d80000;
+        color: #fff;
+        font-weight:bold;
+        cursor:pointer;
+        font-size: 16px;
+        transition: all 0.2s ease-in-out;
+        position: unset;
+    }
+    .aluno .menu-lateral #button_lateral2{
+        border:none;
+        position: unset;
+        padding: 10px;
+        border-radius:8px;
+        margin-top: 10px;
+        background-color: #d80000;
+        color: #fff;
+        font-weight:bold;
+        cursor:pointer;
+        font-size: 16px;
+        transition: all 0.2s ease-in-out;
+    }
+    .aluno {
+        min-width: 100vh;
+        flex-direction: column;
+    }
+    .aluno ul {
+        display: flex;
+        width: 100%;
+        justify-items: center;
+        padding-left: 20px;
+    }
+    .aluno .menu-lateral {
+        margin-top: 30vh;
+        min-width: 100%;
+        align-items: center;
+        min-height: 40vh;
+        justify-content: center;
+        background: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        box-shadow: 3px 0 0 #DB0000;
+        display: flex;
+    }
     .center-report .main-home {
       flex-direction: column;
     }
@@ -855,19 +1092,25 @@ height: 500px;
 
     .main-home .left-home{
         width: 50%;
-        height: 45vh;
+        height: 45%;
     }
     
     .main-home .right-home{
         text-align: center;
         width: 100%;
-        height: auto;
+        height: 20vh;
     }
     .main-home .right-home h1 {
         font-size:18pt;
     }
     .main-home .left-home-image{
-        width: 50vw;
+        width: 70vw;
+    }
+    .navbar-header::before {
+        width: 100%;
+    }
+    .navbar-header {
+        width: 100%;
     }
     .navbar-header .icons {
         display: inline-flex;
