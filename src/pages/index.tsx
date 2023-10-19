@@ -13,6 +13,15 @@ export default function Index() {
   return (<>
     <style jsx>
  {`
+ 
+.main-home{
+  width: 100vw;
+  height: 100vh;
+  background: #202020;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
     .main-home .left-home{
         width: 50vw;
         display: flex;

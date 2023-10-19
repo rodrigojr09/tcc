@@ -49,14 +49,121 @@ export default function ReporteNew() {
       router.push("/reporte/success")
     });
   }
-  if (status === "authenticated") return <div className="center-report">
+  if (status === "authenticated") return <>
+  <style jsx>
+    {`
+.center-report {
+    height: 100vh;
+    width: 100%;
+    font-family: 'Noto Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    background-color: #202020;
+    margin-top: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.center-report .card-report {
+    height: 500px;
+    width: 550px;
+    display: flex;
+    margin-top: 70px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px 30px 35px;
+    background: #30303066;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+  }
+  
+  .center-report .no-resize {
+    resize: none;
+  }
+  
+  .center-report .card-report > h1 {
+    color: #fff;
+    font-weight: 800;
+    font-size: large;
+    margin: 0;
+    margin-top: 20px;
+  }
+  
+  .center-report select {
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #717171;
+    color: #fff;
+    font-size: 13pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  .center-report .textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+  }
+  
+  .center-report .textfield > textarea {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #717171;
+    color: #fff;
+    font-size: 13pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  .center-report .textfield > label {
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .center-report .textfield > input ::placeholder {
+    color: #ffffff94;
+  }
+  
+  .center-report .btn-enviar {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #ffffff;
+    background: #d80000;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #db00004e;
+  }
+  
+  .center-report .textarea {
+    width: 50px;
+    height: 50px;
+  }`}
+  </style>
+  <div className="center-report">
         <div className="card-report">
           <h1>Reporte</h1>
           <div className="textfield">
             <label htmlFor="sala">Escolha a sala que requer manutenção:</label>
-            <select id="sala" name="sala">
-                { salas.map((a:any,i:number) => <option onChange={e=>setSelected(i)} key={a.id}>{a.nome}</option>) }
-            </select>
+            <input/>
             <br/>
             <label htmlFor="tipo">Nos diga o seu problema ou sugestão:</label>
             <select id="tipo" name="tipo">
@@ -70,4 +177,5 @@ export default function ReporteNew() {
         <button onClick={e=>enviar()} className="btn-enviar">enviar</button>
       </div>
     </div>
+  </>
 }
