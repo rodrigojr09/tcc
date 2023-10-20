@@ -1,3 +1,9 @@
-export default function Button({text,css,f}:{text:string,css?:string,f:()=>void}){
-
-}
+export default function Button({
+  text,
+  css,
+  f,
+}: {
+  text: string;
+  css?: string;
+  f: () => void;
+}) {}

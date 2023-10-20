@@ -17,15 +17,8 @@ export default async function handle(
 
 async function handlePOST(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const body = req.body;
-    const user = await prisma.users.findFirst({ where: { rm: body.user } });
-    if (user) {
-      const updated = await prisma.users.update({
-        where: { rm: body.user },
-        data: { password: body.senha },
-      });
-      if (updated) return res.json({ s: true });
-    }
+    const reportes = await prisma.report.findMany({where: {user:req.body.user}});
+    res.json({ s: true, reportes });
   } catch (e) {
     console.log(e);
     res.json({ s: false });
