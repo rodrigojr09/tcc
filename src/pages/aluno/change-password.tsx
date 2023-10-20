@@ -20,6 +20,7 @@ export default function ChangePassword(){
     }, [])
     function enviar(){
         if(senha != confirm) return setError("As Senhas não são iguais");
+        if(senha.length < 6) return setError("Senha muito curta")
         fetch("/api/db/change-password", {
             method: "POST",
             headers: {
