@@ -1,4 +1,3 @@
-import { AES } from "crypto-js";
 import type { NextApiRequest, NextApiResponse } from "next";
 import prisma from "../../../lib/prisma/prisma";
 

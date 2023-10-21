@@ -56,7 +56,7 @@ export default function AdminIndex() {
                   cadastrados no banco de dados
                 </p>
               </div>
-              <a href="/admin/reportes" className="entrar_button">Entrar</a>
+              <a href="/admin/alunos" className="entrar_button">Entrar</a>
             </div>
           </div>
           <div className="admin-right">

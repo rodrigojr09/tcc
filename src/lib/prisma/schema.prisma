@@ -28,7 +28,8 @@ model Users {
 }
 
 model Report {
-  id          String  @id @map("_id") @db.ObjectId
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  cod         String
   user        String
   motivo      String
   type        String

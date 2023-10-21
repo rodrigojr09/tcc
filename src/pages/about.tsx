@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Sobre() {
   return (
-    <>
+    <div className="sobre">
       <div className="main-home">
         <div className="left-home">
           <h1>
@@ -19,6 +19,6 @@ export default function Sobre() {
           <Image src={img} className="right-home-image" alt="image anim" />
         </div>
       </div>
-    </>
+    </div>
   );
 }

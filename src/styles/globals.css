@@ -7,16 +7,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
   font-family: "--font-noto-sans", sans-serif;
 }
 
 body {
+  color: white;
   width: 100vw;
   height: 100vh;
   background: #202020;
   background-size: cover;
   background-repeat: center;
-  overflow: hidden;
 }
 
 .page-404 {
@@ -351,7 +352,18 @@ body {
   justify-content: center;
   margin: 10px 0px;
 }
-
+.center-report .textfield > input {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background: #717171;
+  color: #fff;
+  font-size: 13pt;
+  box-shadow: 0px 10px 40px #00000056;
+  outline: none;
+  box-sizing: border-box;
+}
 .center-report .textfield > textarea {
   width: 100%;
   border: none;
@@ -846,6 +858,22 @@ a {
   flex-direction: column;
 }
 
+.success .right-home {
+  width: 43vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex-direction: column;
+}
+
+.success .right-home > h1 {
+  font-size: 18pt;
+  color: #fff;
+}
+
 .left-home-image2 {
   height: 400px;
   width: 400px;
@@ -1009,6 +1037,7 @@ a {
   border-right: 0px;
   flex: 1;
   border: none;
+
   outline: none;
   border-top-left-radius: 7px; /* 2px */
   border-bottom-left-radius: 7px;
@@ -1156,9 +1185,7 @@ a {
         font-weight: 800;
         letter-spacing: 4px;
         color:#fff;
-        background:green;
         cursor: pointer;
-        box-shadow: 0px 10px 40px -12px #db00004e;
         transition: transform 200ms ease-in-out;
     }
     .reportes section details input.btn.btn-primary{
@@ -1199,13 +1226,16 @@ a {
         border-top-left-radius: 7px; /* 2px */
         border-bottom-left-radius: 7px; 
     }
-    .reportes .container button{
+    .reportes .container a{
        text-decoration: #fff;
         width: 100px ;
       background: #db0000;
       padding: 10px 50x;
       border: none;
       outline:none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       color: #fff;
       letter-spacing: 2px;
       border-top-right-radius: 7px; /* 2px */
@@ -1433,3 +1463,90 @@ a {
     padding: 1.3rem 5%;
   }
 }
+
+.alunos {
+    min-height: min-content;
+    width: 100%;
+    height: min-content;
+    display: flex;
+    background: #202020;
+    align-items: start;
+    margin-top: 20vh;
+    justify-content: start;
+    background-size: cover;
+    background-repeat: center;
+    margin-bottom: 200px;
+  }
+  .alunos section{
+      width:60%;
+      max-width:600px;
+  }
+  .alunos section details summary{
+      border-radius: 7px;
+      color: #fff;
+      background-color: #db0000;
+      padding: 2%;
+      border-bottom: 2px solid #282828;
+  }
+  .alunos section details input.btn.btn-primary{
+      height: 50px;
+      width: 178px;
+      padding: 5x 0px;
+      margin:9px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 4px;
+      color:#fff;
+      background: #c00909;
+      cursor: pointer;
+      box-shadow: 0px 10px 40px -12px #db00004e;
+      transition: transform 200ms ease-in-out;
+  }
+  .alunos section details input.btn.btn-primary:hover{
+      transform: scale(1.1);
+  }
+      .alunos .container form{
+         width: 600px;
+         height: 55px;
+         display: flex;
+         border-radius: 7px;
+      }
+  
+  .alunos .container input {
+      letter-spacing: 2px;
+      background: #717171;
+      border-right: 0px;
+      padding-left: 10px;
+      flex: 1;
+      color: white;
+      border: none;
+      outline: none;
+      border-top-left-radius: 7px; /* 2px */
+      border-bottom-left-radius: 7px; 
+  }
+  .alunos .container button{
+     text-decoration: #fff;
+      width: 100px ;
+    background: #db0000;
+    padding: 10px 50x;
+    border: none;
+    outline:none;
+    color: #fff;
+    letter-spacing: 2px;
+    border-top-right-radius: 7px; /* 2px */
+    border-bottom-right-radius: 7px; 
+  }
+  .alunos .body {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-items: center;
+      align-items: center;
+  }
+  
+  .alunos ::placeholder {
+      color: white;
+  }

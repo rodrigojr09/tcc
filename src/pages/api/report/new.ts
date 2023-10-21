@@ -18,8 +18,8 @@ export default async function handle(
 async function handlePOST(req: NextApiRequest, res: NextApiResponse) {
   const body = req.body;
   try {
-    const report: Report = {
-      id: `${Math.floor(Math.random() * 2000)}`,
+    const report = {
+      cod: `${Math.floor(Math.random() * 2000)}`,
       motivo: body.motivo,
       user: body.user,
       type: body.type === "1" ? "Reclamação" : "Sugestão",

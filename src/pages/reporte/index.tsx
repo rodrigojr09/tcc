@@ -30,8 +30,9 @@ export default function ReporteNew() {
           type,
           user: (data?.user as any).rm,
         }),
-      }).then(async () => {
-        router.push("/reporte/success");
+      }).then(res=>res.json()).then(async res => {
+        console.log(res)
+        router.push("/reporte/success?id="+res.reporte.cod);
       });
     }
   }
