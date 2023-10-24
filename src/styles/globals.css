@@ -5,13 +5,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: none;
-  overflow-x: hidden;
+  overflow: hidden;
   font-family: "--font-noto-sans", sans-serif;
 }
 
-h1, p, label, button, input, .buttons {
+h1, p, label, button, input, .buttons, a {
   overflow-y: hidden;
+}
+
+div, main {
+  overflow-y: visible;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -898,8 +901,8 @@ a {
 
 .center-senha .card-senha {
   margin: auto;
-  height: 350px;
-  width: 400px;
+  height: 500px;
+  width: 550px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1624,8 +1627,8 @@ font-family: 'Noto Sans', sans-serif;
 }
 
 .responder .card-info{
-    height: 450px;
-    width: 700px;
+    height: 76vh;
+    width: 100vh;
     display: flex;
     align-items:center;
     flex-direction:column;
@@ -1679,7 +1682,7 @@ font-family: 'Noto Sans', sans-serif;
 
 .responder input.btn.btn-secundary{
   height: 50px;
-  width: 15vw;
+  width: 13vw;
   padding: 5px 0px;
   margin:9px;
   border: none;
@@ -1713,11 +1716,11 @@ font-family: 'Noto Sans', sans-serif;
 }
 
 .center-exibir .card-exibir {
-  height: 700px;
+  height: 500px;
   width: 550px;
   display: flex;
   margin-top: 70px;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   padding: 30px 35px 30px 35px;
@@ -1730,7 +1733,7 @@ font-family: 'Noto Sans', sans-serif;
   resize: none;
 }
 
-.center-exibir .card-report > h1 {
+.center-exibir .card-exibir > h1 {
   color: #fff;
   font-weight: 800;
   font-size: large;

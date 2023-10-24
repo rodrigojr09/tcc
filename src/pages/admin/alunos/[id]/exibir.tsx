@@ -9,9 +9,6 @@ export default function AdminAlunos(){
     const router = useRouter();
     const [aluno,setAluno] = useState<Users|undefined>();
     const [nome,setNome] = useState<string>("");
-    const [curso,setCurso] = useState<string>("");
-    const [turma,setTurma] = useState<string>("");
-    const [serie,setSerie] = useState<string>("");
     const [permission,setPermission] = useState<string>("");
     if (status === "unauthenticated") router.push("/auth/login");
     if(router.query.id && !aluno){
@@ -25,6 +22,7 @@ export default function AdminAlunos(){
             console.log(res);
             setAluno(res.aluno)
             setNome(res.aluno.nome)
+            setPermission(res.aluno.permission)
         });
     }
     return (
@@ -39,22 +37,10 @@ export default function AdminAlunos(){
               <input value={nome} onChange={(e) => setNome(e.target.value)} />
               <br />
               <label htmlFor="sala">
-                Curso
+                Permissão
               </label>
-              <input value={curso} onChange={(e) => setCurso(e.target.value)} />
-              <br/>
-              <label htmlFor="sala">
-                Nome
-              </label>
-              <input value={aluno?.nome} onChange={(e) => {aluno ? (aluno.nome = e.target.value as string, setAluno(aluno)) : ""}} />
+              <input value={permission} onChange={(e) => setPermission(e.target.value)} />
               <br />
-              <label htmlFor="entrada">Insira o Motivo de reporte:</label>
-              <textarea
-                value={"motivo"}
-                onChange={(e) => (e.target.value)}
-                className="no-resize"
-                style={{ height: "100px", width: "100%" }}
-              ></textarea>
             </div>
             <button onClick={(e) => ("a")} className="btn-enviar">
               Salvar

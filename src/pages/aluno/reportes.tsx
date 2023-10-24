@@ -30,7 +30,6 @@ export default function Reportes() {
       <div className="container">
         <form>
           <input style={{color:"white",paddingLeft:"10px"}} type="text" value={filter} onChange={e=>setFilter(e.target.value)}  placeholder="Digite o numero do reporte:" />
-          <a href="/reporte">NOVO</a>
         </form>
       </div>
       <section>
@@ -47,6 +46,7 @@ export default function Reportes() {
           )}} />
         </details>
         )}
+        {reportes && reportes.length === 0 && <p style={{padding: "1.4rem", textAlign: "center"}}>Nenhum reporte criado, <a href="/reporte" style={{color:"red"}}>deseja criar um?</a></p>}
       </section>
     </div></div>
   );

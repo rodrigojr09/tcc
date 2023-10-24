@@ -55,8 +55,22 @@ export default function AdminReportes() {
                   className="btn btn-primary"
                   type="button"
                   value="Deletar"
-                  onClick={(e) =>
-                    router.push("/admin/reportes/" + a.cod + "/deletar")
+                  onClick={(e) => {
+                    const remove = confirm("Você realmente deseja remover o reporte \""+a.cod+"\"?")
+                    if(remove){
+                      fetch("/api/db/reportes/"+a.cod+"/delete", {
+                        method: "POST",
+                        headers: {
+                          Accept: "application/json",
+                          "Content-Type": "application/json",
+                        },
+                      })
+                        .then((req) => req.json())
+                        .then(async (res) => {
+                          router.reload()
+                        });
+                    }
+                  }
                   }
                 />
                 <input
@@ -77,6 +91,7 @@ export default function AdminReportes() {
                 )}} />
               </details>
             ))}
+            {reportes.length === 0 && <p style={{padding: "1.4rem", textAlign: "center"}}>Nenhum reporte criado</p>}
         </section>
       </div>
     </div>

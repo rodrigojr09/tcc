@@ -78,6 +78,7 @@ export default function Login() {
             <button onClick={(e) => auth()} className="btn-login">
               Login
             </button>
+          <p style={{color: "red"}}>Obs: Caso seja sua primeira vez no site, use seu cpf como senha inicial, que você terá q mudar ao logar.</p>
           </div>
         </div>
       </div>

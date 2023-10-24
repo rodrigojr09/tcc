@@ -1,6 +1,5 @@
-import { AES } from "crypto-js";
 import type { NextApiRequest, NextApiResponse } from "next";
-import prisma from "../../../lib/prisma/prisma";
+import prisma from "../../../../../lib/prisma/prisma";
 
 export default async function handle(
   req: NextApiRequest,
@@ -17,15 +16,14 @@ export default async function handle(
 
 async function handlePOST(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const body = req.body;
-    const user = await prisma.users.findFirst({ where: { rm: body.user } });
-    if (user) {
-      const updated = await prisma.users.update({
-        where: { rm: body.user },
-        data: { password: body.senha },
-      });
-      res.json({ s: true });
-    }
+    if(!req.query.id) throw "Errooooooooooo";
+    const reporte = await prisma.report.findFirst({
+        where: {
+            cod: req.query.id as string
+        }
+    });
+    const deleted = await prisma.report.delete({where: {id: reporte?.id}})
+    res.json({ s: true  });
   } catch (e) {
     console.log(e);
     res.json({ s: false });

@@ -28,7 +28,6 @@ export default function AdminAlunos(){
                 <div className="container">
                     <form>
                         <input value={filter} onChange={e=>setFilter(e.target.value)} className="input" type="text" placeholder="Digite o nome  do aluno?"/>
-                        <button type="submit">Buscar</button>
                     </form>
                 </div>
                 <section>
@@ -38,9 +37,26 @@ export default function AdminAlunos(){
                     .map(a=><details>
                         <summary> {a.nome} | {a.rm} | {a.cpf}</summary>
                         <input className="btn btn-primary" type="button" value="Exibir" onClick={e=>router.push("/admin/alunos/"+a.rm+"/exibir")} />
-                        <input className="btn btn-primary" type="button" value="Deletar" onClick={e=>router.push("/admin/alunos/"+a.rm+"/deletar")} />
+                        <input className="btn btn-primary" type="button" value="Deletar"  onClick={(e) => {
+                    const remove = confirm("Você realmente deseja remover o aluno \""+a.nome+"\"?")
+                    if(remove){
+                      fetch("/api/db/alunos/"+a.id+"/delete", {
+                        method: "POST",
+                        headers: {
+                          Accept: "application/json",
+                          "Content-Type": "application/json",
+                        },
+                      })
+                        .then((req) => req.json())
+                        .then(async (res) => {
+                          router.reload()
+                        });
+                    }
+                  }
+                    } />
                         <input className="btn btn-primary" type="button" value="Reportes" onClick={e=>router.push("/admin/alunos/"+a.rm+"/reportes")} />
                     </details>)}
+                    {alunos.length === 0 && <p style={{padding: "1.4rem", textAlign: "center"}}>Nenhum aluno criado</p>}
                 </section> 
             </div>
         </div>

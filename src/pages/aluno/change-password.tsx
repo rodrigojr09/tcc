@@ -19,7 +19,7 @@ export default function ChangePassword() {
     if (erro === "NotSecure") setError("Sua senha não é segura");
   }, []);
   function enviar() {
-    if (senha != confirm) return setError("As Senhas não são iguais");
+    if (senha !== confirm) return setError("As Senhas não são iguais");
     if (senha.length < 6) return setError("Senha muito curta");
     fetch("/api/db/change-password", {
       method: "POST",
@@ -35,9 +35,7 @@ export default function ChangePassword() {
     })
       .then((res) => res.json())
       .then(async (res) => {
-        if (res.s) {
-          router.push("/aluno");
-        }
+        router.push("/aluno");
       });
   }
   return (

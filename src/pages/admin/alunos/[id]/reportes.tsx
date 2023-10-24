@@ -80,6 +80,7 @@ export default function AdminReportes() {
                 )}} />
               </details>
             ))}
+            {reportes && reportes.length === 0 && <p style={{padding: "1.4rem", textAlign: "center"}}>Nenhum reporte criado</p>}
         </section>
       </div>
     </div>
