@@ -8,22 +8,25 @@ export default function AdminReportes() {
   const user = data?.user as Users | undefined;
   const [filter, setFilter] = useState<string>("");
   const router = useRouter();
-  const [reportes, setReportes] = useState<Report[]>([]);
+  const [reportes, setReportes] = useState<Report[]|undefined>();
   if (status === "unauthenticated") router.push("/auth/login");
-  useEffect(() => {
+  if(router.query.id && !reportes){
     fetch("/api/db/reportes", {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
+      body: JSON.stringify({
+        user: router.query.id
+      })
     })
       .then((req) => req.json())
       .then(async (res) => {
         console.log(res);
         setReportes(res.reportes);
       });
-  }, []);
+}
   return (
     <div className="reportes">
       <div className="body">
@@ -39,7 +42,7 @@ export default function AdminReportes() {
           </form>
         </div>
         <section>
-          {reportes
+          {reportes && reportes
             .filter(
               (a) =>
                 a.sala.toLowerCase().startsWith(filter) || a.cod.toLowerCase().startsWith(filter) || a.user.toLowerCase().startsWith(filter)

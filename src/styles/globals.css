@@ -1,14 +1,29 @@
-/*@tailwind base;
-@tailwind components;
-@tailwind utilities;*/
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/tilt?family=Noto+Sans:wght@400;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: none;
   overflow-x: hidden;
   font-family: "--font-noto-sans", sans-serif;
+}
+
+h1, p, label, button, input, .buttons {
+  overflow-y: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #171717;
+}
+::-webkit-scrollbar-track {
+  padding: 2px 0;
+  background-color: #1d1d1dc6;
+}
+::-webkit-scrollbar {
+  width: 10px;
 }
 
 body {
@@ -232,13 +247,14 @@ body {
   color: #fff;
   font-weight: 800;
   margin: 0;
+  min-height: 40px;
 }
 
 .main-login .textfield {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   margin: 10px 0px;
 }
@@ -258,7 +274,7 @@ body {
 
 .main-login .textfield > label {
   color: #fff;
-  margin-bottom: 10px;
+  height: 30px;
 }
 
 .main-login ::placeholder {
@@ -328,6 +344,7 @@ body {
   font-size: large;
   margin: 0;
   margin-top: 20px;
+  min-height: 40px;
 }
 
 .center-report select {
@@ -348,7 +365,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   margin: 10px 0px;
 }
@@ -377,9 +394,9 @@ body {
   box-sizing: border-box;
 }
 
-.center-report .textfield > label {
+.textfield > label {
   color: #fff;
-  margin-bottom: 10px;
+  height: 30px;
 }
 
 .center-report .textfield > input ::placeholder {
@@ -901,6 +918,7 @@ a {
   color: #fff;
   font-weight: 800;
   margin: 0;
+  min-height: 40px;
 }
 
 .center-senha input {
@@ -921,7 +939,7 @@ a {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   margin: 10px 0px;
 }
@@ -941,7 +959,7 @@ a {
 
 .center-senha .textfield > label {
   color: #fff;
-  margin-bottom: 10px;
+  height: 30px;
 }
 
 .center-senha .textfield > input ::placeholder {
@@ -968,17 +986,7 @@ a {
   transform: scale(1.05);
 }
 
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background-color: #171717;
-}
-::-webkit-scrollbar-track {
-  padding: 2px 0;
-  background-color: #1d1d1dc6;
-}
-::-webkit-scrollbar {
-  width: 10px;
-}
+
 
 .suporte {
   min-height: 100vh;
@@ -1054,6 +1062,7 @@ a {
   border-top-right-radius: 7px; /* 2px */
   border-bottom-right-radius: 7px;
 }
+
 .suporte .body {
   display: flex;
   flex-direction: column;
@@ -1157,6 +1166,10 @@ a {
         margin-left: auto;
         margin-right: auto;
     }
+
+    .container input {
+      padding-left: 10px;
+    }
     
     .reportes section details .card-itens {
         width: 100%;
@@ -1173,10 +1186,10 @@ a {
         padding: 2%;
         border-bottom: 2px solid #282828;
     }
-    .reportes section details input.btn.btn-secundary{
+    .reportes section details input.btn.btn-secundary, .reportes section details a.btn.btn-secundary{
         height: 50px;
-        width: 18.3vw;
-        padding: 5x 0px;
+        width: 15vw;
+        padding: 5px 0px;
         margin:9px;
         border: none;
         border-radius: 10px;
@@ -1188,10 +1201,10 @@ a {
         cursor: pointer;
         transition: transform 200ms ease-in-out;
     }
-    .reportes section details input.btn.btn-primary{
+    .reportes section details input.btn.btn-primary, .reportes section details a.btn.btn-primary{
         height: 50px;
-        width: 18.3vw;
-        padding: 5x 0px;
+        width: 15vw;
+        padding: 5px 0px;
         margin:9px;
         border: none;
         border-radius: 10px;
@@ -1205,7 +1218,7 @@ a {
         box-shadow: 0px 10px 40px -12px #db00004e;
         transition: transform 200ms ease-in-out;
     }
-    .reportes section details input.btn.btn-primary:hover{
+    .reportes section details input.btn.btn-primary:hover, .reportes section details a.btn.btn-primary:hover{
         transform: scale(1.1);
     }
     
@@ -1473,9 +1486,9 @@ a {
     height: min-content;
     display: flex;
     background: #202020;
-    align-items: start;
+    align-items: flex-start;
     margin-top: 20vh;
-    justify-content: start;
+    justify-content: flex-start;
     background-size: cover;
     background-repeat: center;
     margin-bottom: 200px;
@@ -1553,3 +1566,252 @@ a {
   .alunos ::placeholder {
       color: white;
   }
+
+  .reportes .container form{
+    width: 600px;
+    height: 55px;
+    display: flex;
+    border-radius: 7px;
+ }
+
+ .reportes .container input {
+ letter-spacing: 2px;
+ background: #717171;
+ border-right: 0px;
+ flex: 1;
+ border: none;
+ outline: none;
+ border-top-left-radius: 7px; /* 2px */
+ border-bottom-left-radius: 7px; 
+}
+.reportes .container button{
+text-decoration: #fff;
+ width: 100px ;
+background: #db0000;
+padding: 10px 50x;
+border: none;
+outline:none;
+color: #fff;
+letter-spacing: 2px;
+border-top-right-radius: 7px; /* 2px */
+border-bottom-right-radius: 7px; 
+}
+.reportes .body {
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+ justify-items: center;
+ align-items: center;
+}
+
+::placeholder {
+ color: white;
+}
+.input {
+  color: white;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+.responder {
+font-family: 'Noto Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    overflow-y: hidden;
+    background-color: #202020;
+}
+
+.responder .card-info{
+    height: 450px;
+    width: 700px;
+    display: flex;
+    align-items:center;
+    flex-direction:column;
+    padding: 30px 35px;
+    background: #30303066;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+.responder .no-resize{
+    resize:none;
+}
+
+.responder .card-info > h1 {
+    color:#fff;
+    font-weight: 800;
+    font-size: 30pt;
+    margin-top:0px
+
+}
+
+.responder .info{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin:10px 0px;
+}
+
+.responder .info > label {
+    color:#fff;
+    margin-bottom: 10px;
+    font-size: 15pt;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.responder .info > textarea {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background: #717171;
+  color: #fff;
+  font-size: 13pt;
+  box-shadow: 0px 10px 40px #00000056;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.responder input.btn.btn-secundary{
+  height: 50px;
+  width: 15vw;
+  padding: 5px 0px;
+  margin:9px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color:#fff;
+  cursor: pointer;
+  transition: transform 200ms ease-in-out;
+}
+
+.responder .buttons {
+  display: flex;
+}
+
+
+.center-exibir {
+  height: 100vh;
+  width: 100%;
+  font-family: "Noto Sans", sans-serif;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: hidden;
+  background-color: #202020;
+  margin-top: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.center-exibir .card-exibir {
+  height: 700px;
+  width: 550px;
+  display: flex;
+  margin-top: 70px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 35px 30px 35px;
+  background: #30303066;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px #00000056;
+}
+
+.center-exibir .no-resize {
+  resize: none;
+}
+
+.center-exibir .card-report > h1 {
+  color: #fff;
+  font-weight: 800;
+  font-size: large;
+  margin: 0;
+  margin-top: 20px;
+  min-height: 40px;
+}
+
+.center-exibir select {
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background: #717171;
+  color: #fff;
+  font-size: 13pt;
+  box-shadow: 0px 10px 40px #00000056;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.center-exibir .textfield {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0px;
+}
+.center-exibir .textfield > input {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background: #717171;
+  color: #fff;
+  font-size: 13pt;
+  box-shadow: 0px 10px 40px #00000056;
+  outline: none;
+  box-sizing: border-box;
+}
+.center-exibir .textfield > textarea {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background: #717171;
+  color: #fff;
+  font-size: 13pt;
+  box-shadow: 0px 10px 40px #00000056;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.textfield > label {
+  color: #fff;
+  height: 30px;
+}
+
+.center-exibir .textfield > input ::placeholder {
+  color: #ffffff94;
+}
+
+.center-exibir .btn-enviar {
+  width: 100%;
+  padding: 16px 0px;
+  margin: 25px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #ffffff;
+  background: #d80000;
+  cursor: pointer;
+  box-shadow: 0px 10px 40px -12px #db00004e;
+}
+
+.center-exibir .textarea {
+  width: 50px;
+  height: 50px;
+}

@@ -37,9 +37,9 @@ export default function AdminAlunos(){
                     //.filter((a,i) => (i<50))
                     .map(a=><details>
                         <summary> {a.nome} | {a.rm} | {a.cpf}</summary>
-                        <input className="btn btn-primary" type="button" value="Editar" onClick={e=>router.push("/admin/alunos/"+a.rm+"/editar")} />
                         <input className="btn btn-primary" type="button" value="Exibir" onClick={e=>router.push("/admin/alunos/"+a.rm+"/exibir")} />
                         <input className="btn btn-primary" type="button" value="Deletar" onClick={e=>router.push("/admin/alunos/"+a.rm+"/deletar")} />
+                        <input className="btn btn-primary" type="button" value="Reportes" onClick={e=>router.push("/admin/alunos/"+a.rm+"/reportes")} />
                     </details>)}
                 </section> 
             </div>

@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import prisma from "../../../lib/prisma/prisma";
+import prisma from "../../../../../lib/prisma/prisma";
 
 export default async function handle(
   req: NextApiRequest,
@@ -16,9 +16,10 @@ export default async function handle(
 
 async function handlePOST(req: NextApiRequest, res: NextApiResponse) {
   try {
-    console.log(req.body)
-    const reportes = await prisma.report.findMany({where: {user:req.body.user}});
-    res.json({ s: true, reportes });
+    if(!req.query.id) throw "Errooooooooooo";
+    const reporte = await prisma.report.findFirst({where: {cod:req.query.id as string}});
+    const aluno = await prisma.users.findFirst({where: {rm: reporte?.user }});
+    res.json({ s: true, reporte, aluno  });
   } catch (e) {
     console.log(e);
     res.json({ s: false });
