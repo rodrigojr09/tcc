@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ReporteIMG from "../../styles/assets/img/reporte.svg";
+import HistoryIMG from "../../styles/assets/img/history.svg";
 import SuporteIMG from "../../styles/assets/img/suporte.svg";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
@@ -102,8 +103,8 @@ export default function PageAluno() {
             <div className="card-class">
               <div className="icon">
                 <Image
-                  src={ReporteIMG}
-                  alt="reporte.svg"
+                  src={HistoryIMG}
+                  alt="historico.svg"
                   height="172"
                   width="250"
                 />
