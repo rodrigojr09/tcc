@@ -16,7 +16,6 @@ export default async function handle(
 
 async function handlePOST(req: NextApiRequest, res: NextApiResponse) {
   try {
-    console.log(req.body)
     const reportes = await prisma.report.findMany({where: {user:req.body.user}});
     res.json({ s: true, reportes });
   } catch (e) {

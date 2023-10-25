@@ -50,6 +50,8 @@ export default function AdminReportes() {
             <label>Tipo: {reporte.type}</label>
             <label>Descrição:</label> 
             <textarea className="no-resize" readOnly={true} value={reporte.motivo}></textarea>
+            {reporte.nota && <><label>Nota para o Aluno:</label> 
+            <textarea className="no-resize" readOnly={true} value={reporte.nota}></textarea></>}
         </div>
         </div>
     </div>

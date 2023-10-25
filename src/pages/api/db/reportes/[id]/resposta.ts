@@ -22,16 +22,15 @@ async function handlePOST(req: NextApiRequest, res: NextApiResponse) {
             cod: req.query.id as string
         }
     });
-    console.log(req.query)
     const updated = await prisma.report.update({
         where: {
             id: reporte?.id
         },
         data: {
-            status: req.query.type as string
+            status: req.query.type as string,
+            nota: req.body.nota
         }
     })
-    console.log(updated)
     res.json({ s: true  });
   } catch (e) {
     console.log(e);

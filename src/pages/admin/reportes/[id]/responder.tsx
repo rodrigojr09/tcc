@@ -8,6 +8,7 @@ export default function AdminReportes() {
   const user = data?.user as Users | undefined;
   const [filter, setFilter] = useState<string>("");
   const router = useRouter();
+  const [nota,setNota] = useState<string>("");
   const [reporte, setReporte] = useState<Report|undefined>();
   const [aluno, setAluno] = useState<Users|undefined>();
   if (status === "unauthenticated") router.push("/auth/login");
@@ -17,12 +18,13 @@ export default function AdminReportes() {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
-        },
+        }
       })
         .then((req) => req.json())
         .then(async (res) => {
           setReporte(res.reporte);
           setAluno(res.aluno);
+          setNota(res.reporte.nota || "")
         });
   }
   function resposta(type:String){
@@ -33,6 +35,9 @@ export default function AdminReportes() {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
+        body: JSON.stringify({
+          nota
+        })
       })
         .then((req) => req.json())
         .then(async (res) => {
@@ -51,6 +56,9 @@ export default function AdminReportes() {
             <label>Tipo: {reporte.type}</label>
             <label>Descrição:</label> 
             <textarea className="no-resize" readOnly={true} value={reporte.motivo}></textarea>
+            <br/>
+            <label>Nota para o Aluno:</label> 
+            <textarea className="no-resize" placeholder="Digite aqui..." value={nota} onChange={e=>setNota(e.target.value)} ></textarea>
         </div>
         <div className="buttons">
         <input className="btn btn-secundary" onClick={e=>resposta("Pendente")} type="button" value={"Pendente"} style={{backgroundColor: "transparent", border: "1px solid "+("yellow"), color: ("yellow"),boxShadow: "0px 10px 40px -12px "+("yellow")}} />
